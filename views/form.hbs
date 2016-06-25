@@ -1,0 +1,12 @@
+<form method="post" action="formHandler">
+  <label> Enter a title </label><br>
+  <input type="text" name="title" placeholder="Enter a title"><br>
+  <label> Enter a paragraph </label><br>
+  <textarea name="paragraph" id="paragraph" col="80" rows="10"></textarea><br>
+  <input type="submit" value="Post something">
+</form>
+
+{{#if title}}
+<p>Title is {{title}}</p>
+<p>Paragraph is {{paragraph}}</p>
+{{/if}}

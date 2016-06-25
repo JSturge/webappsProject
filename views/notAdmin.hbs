@@ -1,0 +1,16 @@
+<h2> Assignments for <strong>{{ user.username}} </strong> </h2>
+{{#if rows}}
+<table border ="1">
+{{#each rows}}
+  <tr>
+  {{#each this}}
+     <td> {{ this }}</td>
+  {{/each}}
+</tr>
+{{/each}}
+</table>
+{{else}}
+  <h3 style="color:red;">No assignments</h3>
+{{/if}}
+<br><a href="/exam/changePassword">Change Password</a><br>
+<a href="/exam/logout">Log out</a><br>

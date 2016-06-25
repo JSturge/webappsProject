@@ -1,0 +1,78 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@media only screen and (max-width: 500px) {
+    body {
+      max-width: 100%;
+        }
+      }
+    }
+.addQuestion {
+  width: 360px;
+  padding: 2% 0 0;
+  margin: auto;
+}
+body{
+  font-family: "Roboto", sans-serif;
+}
+.logo h2{
+
+  color: green;
+  font-size: 72px;
+  text-align: center;
+  margin: 10px;
+}
+.logo p {
+  font-size: 18px;
+  text-align: center;
+}
+
+</style>
+<div class= "logo">
+<h2>&#127891; E-Z Chat &#127891;</h2>
+<p><i>-for students and teachers!</i></p>
+</div>
+<div class = "addQuestion">
+<h2>Please add a new question!</h2>
+
+
+{{#if rows}}
+<table border ="1">
+{{#each rows}}
+  <tr>
+  {{#each this}}
+     <td> {{ this }}</td>
+  {{/each}}
+</tr>
+{{/each}}
+</table>
+{{/if}}
+
+<form class= "questionform" method="post" action="finaladdQuestion">
+<div style = "float:left; width: 200px;">Who are you asking this to? </div>
+  <input type="text" name="user" placeholder="username"><br>
+<div style = "float:left; width: 200px;">What is today's date?</div>
+  <input type="text" name="due" placeholder="MM/DD/YYYY"><br>
+<div style = "float:left; width: 200px;">What is your question? </div>
+  <textarea name="question" placeholder="question" rows="4" cols="60"></textarea><br>
+<br><div style = "float:left; width: 200px;">&nbsp;</div>
+  <input type="submit" value="Submit the Question">
+</form>
+
+{{#if user}}
+<p>Welcome, <strong>{{user.username}}</strong> !</p>
+{{/if}}
+<br><a href="/finalExam/finalNotAdmin"><button type="button" class="button" style="width:150px; height:30px; font-size: 14px; text-align: center;">Go back</button></a><br>
+
+{{#if success}}
+<h3 style="color:green;text-align: center;">Question was successfully sent!</h3>
+{{/if}}
+
+{{#if error}}
+<p style="text-align: center;">{{error}}</p>
+{{/if}}
+
+{{#if fail}}
+<h3 style="color:red;text-align: center;">That teacher does not exist.</h3>
+{{/if}}
+</div>

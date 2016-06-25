@@ -1,0 +1,24 @@
+<h2> Main Administrative Page</h2>
+
+{{#if user}}
+<p>Welcome, Administrator <strong>{{user.username}}</strong> !</p>
+{{/if}}
+
+<form method="post" action="/exam/signup">
+<div style = "float:left; width: 200px;">Student name</div><input type="text" name="username" placeholder="User name"><br>
+<div style = "float:left; width: 200px;">Password</div><input type="password" name="password" placeholder="Password"><br>
+<br><div style = "float:left; width: 200px;">&nbsp;</div><input type="submit" value="Submit the user information"><br>
+<input type="radio" name="authority" value="admin" checked> admin<br>
+<input type="radio" name="authority" value="student"> student<br>
+</form>
+
+<br> <a href="/exam/admin">Back to Main Administrative Page</a><br>
+{{#if exist}}
+<h3 style="color:red;">Username already exisit</h3>
+{{/if}}
+{{#if invalid}}
+<h3 style="color:red;">Username is not valid format. Please retry!</h3>
+{{/if}}
+{{#if success}}
+<h3 style="color:red;">User creation is successful</h3>
+{{/if}}

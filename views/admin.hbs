@@ -1,0 +1,13 @@
+<h2> Main Administrative Page</h2>
+
+<a href="/exam/addAssignment">Add an assignment</a><br>
+<a href="/exam/signup">Add a new student</a><br>
+<a href="/exam/logout">Log out</a><br>
+{{#if user}}
+<p>Welcome, Administrator <strong>{{user.username}}</strong> !</p>
+{{/if}}
+
+
+{{#if error}}
+<p>{{error}}</p>
+{{/if}}

@@ -1,0 +1,29 @@
+<form method="post" action="madlibsHandler">
+  <label> Article of Clothing: </label><br>
+  <input type="text" name="clothing" placeholder="clothing article"><br>
+  <label> Female Person You Know #1: </label><br>
+  <input type="text" name="female1" placeholder="female 1"><br>
+  <label> Female Person You Know #2: </label><br>
+  <input type="text" name="female2" placeholder="female 2"><br>
+  <label> Male Person You Know #1: </label><br>
+  <input type="text" name="male1" placeholder="male 1"><br>
+  <label> Male Person You Know #2: </label><br>
+  <input type="text" name="male2" placeholder="male 2"><br>
+  <label> Plural Noun: </label><br>
+  <input type="text" name="noun" placeholder="plural noun"><br>
+  <input type="submit" value="Post something">
+</form>
+
+
+</form>
+
+{{#if clothing}}
+<p>{{female1}} and her ex-husband {{male1}}</p>
+<p>were seen last night at the Twenty-Three Club holding</p>
+<p>{{noun}}. Could it be reconcillation? The international heartthrob</p>
+<p>{{male2}}, and the glamorous top</p>
+<p>model, {{female2}}, are expecting their first</p>
+<p>baby in November.  {{female2}} is</p>
+<p>denying stork rumors, but yesterday she was buying</p>
+<p>a maternity {{clothing}}</p>
+{{/if}}

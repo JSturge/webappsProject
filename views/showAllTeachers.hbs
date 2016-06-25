@@ -1,0 +1,117 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@media only screen and (max-width: 500px) {
+    body {
+      max-width: 100%;
+        }
+      }
+    }
+.admin {
+  width: 860px;
+  padding: 2% 0 0;
+  margin: auto;
+  text-align: center;
+}
+.centered {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+table {
+color:#333;
+font-family:Helvetica,Arial,sans-serif;
+width:50%;
+border-spacing:1px;
+border-collapse:separate;
+padding:0 3px;
+}
+
+td, th {
+height:30px;
+transition:all 1s;
+text-align:center;
+width:auto;
+}
+
+th {
+background:#B1B6AF;
+font-weight:700;
+border-radius: 5px;
+}
+
+td {
+background:#FAFAFA;
+}
+
+tr:nth-child(even) td {
+background:#F1F1F1;
+}
+
+tr:nth-child(odd) td {
+background:#E1DDDD;
+}
+
+tr td:hover {
+background:#666;
+color:#FFF
+}
+
+.options {
+  padding-top: 10px;
+}
+.button {
+  margin: 3px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+a{
+    text-decoration: none;
+}
+body{
+  font-family: "Roboto", sans-serif;
+}
+.logo h2{
+
+  color: green;
+  font-size: 72px;
+  text-align: center;
+  margin: 10px;
+}
+.logo p {
+  font-size: 18px;
+  text-align: center;
+}
+
+
+</style>
+
+<div class= "logo">
+<h2>&#127891; E-Z Chat &#127891;</h2>
+<p><i>-for students and teachers!</i></p>
+</div>
+
+<div class ="admin">
+<h2 style="text-align: center;"> These are all the teachers, <strong>{{ user.username}} </strong> </h2>
+
+{{#if rows}}
+<table class="centered">
+  <tr>
+    <th>Teacher</th>
+  </tr>
+{{#each rows}}
+  <tr>
+  {{#each this}}
+     <td> {{ this }}</td>
+  {{/each}}
+</tr>
+{{/each}}
+</table>
+{{/if}}
+
+
+<br><a href="/finalExam/finalNotAdmin"><button type="button" class="button" style="width:150px; height:30px; font-size: 14px; text-align: center;">Go back</button></a><br>
+</div>

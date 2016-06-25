@@ -1,0 +1,31 @@
+<h2>Please add a new assignment</h2>
+
+
+<form method="post" action="addAssignment">
+<div style = "float:left; width: 200px;">Student Username </div>
+  <input type="text" name="username" placeholder="username"><br>
+<div style = "float:left; width: 200px;">Due date </div>
+  <input type="text" name="due" placeholder="due date"><br>
+<div style = "float:left; width: 200px;">Assignment Description </div>
+  <textarea name="description" placeholder="assignment description"></textarea><br>
+<br><div style = "float:left; width: 200px;">&nbsp;</div>
+  <input type="submit" value="Submit the assignment">
+</form>
+
+
+{{#if user}}
+<p>Welcome, Administrator <strong>{{user.username}}</strong> !</p>
+{{/if}}
+<br> <a href="/exam/admin">Back to Main Administrative Page</a><br>
+
+{{#if success}}
+<h3 style="color:red;">Assignment creation is successful</h3>
+{{/if}}
+
+{{#if error}}
+<p>{{error}}</p>
+{{/if}}
+
+{{#if fail}}
+<h3 style="color:red;">That user does not exist.</h3>
+{{/if}}

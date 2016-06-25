@@ -1,0 +1,152 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@media only screen and (max-width: 500px) {
+    body {
+      max-width: 100%;
+        }
+      }
+    }
+
+
+.login-page {
+  width: 360px;
+  padding: 2% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 30px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+body {
+  background: #FFFFFF; /* fallback for old browsers */
+  font-family: "Roboto", sans-serif;
+}
+
+.logo h2{
+  color: green;
+  font-size: 72px;
+  text-align: center;
+  margin: 10px;
+}
+.logo p {
+  font-size: 18px;
+  text-align: center;
+}
+</style>
+<div class= "logo">
+<h2>&#127891; E-Z Chat &#127891;</h2>
+<p><i>-for students and teachers!</i></p>
+</div>
+
+<div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>
+    <form class="login-form" method="post" action="/finalExam/finalExamSignup">
+      <h2>Any easy way to communicate with your students!</h2>
+      <input type="text" name="username" placeholder="username"/>
+      <input type="password" name="password" placeholder="password"/>
+      <input class="radiobutton" type="radio" name="accounttype" value="admin" style="width: 5%;"> teacher<br>
+      <input class="radiobutton" type="radio" name="accounttype" value="student" style="width: 5%;"> student<br>
+      <button value ="Log in">Create</button>
+      <p class="message">Already registered? <a href="/finalExam">Sign in</a></p>
+    </form>
+  </div>
+
+
+
+{{#if error}}
+<p>{{error}}</p>
+{{/if}}
+
+{{#if success}}
+<h3 style="color:green; text-align: center;" >User creation is successful. Click <a href="/finalExam/">here</a> to log in.</h3>
+{{/if}}
+</div>

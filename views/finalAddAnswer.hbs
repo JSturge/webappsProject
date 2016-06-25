@@ -1,0 +1,72 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@media only screen and (max-width: 500px) {
+    body {
+      max-width: 100%;
+        }
+      }
+    }
+.addstuff {
+  width: 360px;
+  padding: 2% 0 0;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+body{
+  font-family: "Roboto", sans-serif;
+}
+.logo h2{
+
+  color: green;
+  font-size: 72px;
+  text-align: center;
+  margin: 10px;
+}
+.logo p {
+  font-size: 18px;
+  text-align: center;
+}
+</style>
+<div class= "logo">
+<h2>&#127891; E-Z Chat &#127891;</h2>
+<p><i>-for students and teachers!</i></p>
+</div>
+
+<div class = "addstuff">
+<h2>Please add a new question!</h2>
+
+<div>
+<form method="post" action="finaladdAnswer">
+  <div style = "float:left; width: 200px;">Who asked this? </div>
+    <input type="text" name="username" placeholder="username"><br>
+<div style = "float:left; width: 200px;">Today's Date</div>
+  <input type="text" name="due" placeholder="MM/DD/YYYY"><br>
+<div style = "float:left; width: 200px;">Answer </div>
+  <textarea name="answer" placeholder="answer" rows="4" cols="60"></textarea><br>
+<br><div style = "float:left; width: 200px;">&nbsp;</div>
+  <input type="submit" value="Submit the Answer">
+</form>
+</div>
+
+
+
+{{#if user}}
+<p>Welcome, student <strong>{{user.username}}</strong> !</p>
+{{/if}}
+<br><a href="/finalExam/finalAdmin"><button type="button" class="button" style="width:150px; height:30px; font-size: 14px; text-align: center;">Go back</button></a><br>
+
+{{#if success}}
+<h3 style="color:green;">Answer was successfully sent!</h3>
+{{/if}}
+
+{{#if error}}
+<p>{{error}}</p>
+{{/if}}
+
+{{#if fail}}
+<h3 style="color:red;">That student does not exist.</h3>
+{{/if}}
+</div>

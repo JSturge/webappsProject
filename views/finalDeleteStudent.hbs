@@ -1,0 +1,32 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@media only screen and (max-width: 500px) {
+    body {
+      max-width: 100%;
+        }
+      }
+    }
+
+</style>
+<div>
+<form method="post" action="/finalExam/finalDeleteStudent">
+  <div style = "float:left; width: 200px;">What message id do you want to remove? </div>
+    <input type="text" name="remove" placeholder="remove"><br>
+    <br><div style = "float:left; width: 200px;">&nbsp;</div>
+      <input type="submit" value="Delete">
+</form>
+
+<br><a href="/finalExam/finalNotAdmin"><button type="button" class="button" style="width:150px; height:30px; font-size: 14px; text-align: center;">Go back</button></a><br>
+
+{{#if success}}
+<h3 style="color:green;">Message was successfully deleted!</h3>
+{{/if}}
+
+{{#if error}}
+<p>{{error}}</p>
+{{/if}}
+
+{{#if fail}}
+<h3 style="color:red;">That message does not exist.</h3>
+{{/if}}
+</div>

@@ -1,0 +1,133 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+@media only screen and (max-width: 500px) {
+    body {
+      max-width: 100%;
+        }
+      }
+    }
+
+.admin {
+  width: 860px;
+  padding: 2% 0 0;
+  margin: auto;
+  text-align: center;
+}
+.centered {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+table {
+color:#333;
+font-family:Helvetica,Arial,sans-serif;
+width:100%;
+border-spacing:1px;
+border-collapse:separate;
+padding:0 3px;
+}
+
+td, th {
+height:30px;
+transition:all 1s;
+text-align:center;
+width:auto;
+}
+
+th {
+background:#B1B6AF;
+font-weight:700;
+border-radius: 5px;
+}
+
+td {
+background:#FAFAFA;
+}
+
+tr:nth-child(even) td {
+background:#F1F1F1;
+}
+
+tr:nth-child(odd) td {
+background:#E1DDDD;
+}
+
+tr td:hover {
+background:#666;
+color:#FFF
+}
+
+.options {
+  padding-top: 10px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.button {
+  margin: 3px;
+}
+body{
+  font-family: "Roboto", sans-serif;
+}
+.logo h2{
+  color: green;
+  font-size: 72px;
+  text-align: center;
+  margin: 10px;
+}
+.logo p {
+  font-size: 18px;
+  text-align: center;
+}
+
+
+
+</style>
+
+<div class= "logo">
+<h2>&#127891; E-Z Chat &#127891;</h2>
+<p><i>-for students and teachers!</i></p>
+</div>
+
+<div class ="admin">
+<h2 style="text-align: center;"> Questions received by <strong>{{ user.username}} </strong> </h2>
+
+{{#if rows}}
+<table class="centered">
+  <tr>
+    <th>id</th>
+    <th>from</th>
+    <th>sent to</th>
+    <th>time</th>
+    <th>question</th>
+  </tr>
+{{#each rows}}
+  <tr>
+  {{#each this}}
+     <td> {{ this }}</td>
+  {{/each}}
+</tr>
+{{/each}}
+</table>
+{{/if}}
+
+<div class = "options">
+<a href="/finalExam/finalAddAnswer"><button type="button" class="button" style="width:150px; height:30px; font-size: 14px;">Answer a question</button></a><br>
+<a href="/finalExam/finalDeleteAdmin"><button type="button" class="button" style="width:150px; height:30px; font-size: 14px;">Delete a question</button></a><br>
+<a href="/finalExam/finalChangePassword"><button type="button" class="button" style="width:150px; height:30px; font-size: 14px;">Change Password</button></a><br>
+<a href="/finalExam/logout"><button type="button" class="button" style="width:150px; height:30px; font-size: 14px; color: red;">Log out</button></a><br>
+</div>
+
+
+{{#if user}}
+<p style="text-align: center;">Welcome, professor <strong>{{user.username}}</strong> !</p>
+{{/if}}
+
+
+{{#if error}}
+<p style="text-align: center;">{{error}}</p>
+{{/if}}
+</div>
